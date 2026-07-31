@@ -1,0 +1,62 @@
+{
+  "autoplayMs": 6500,
+  "transitionMs": 1200,
+  "slides": [
+    {
+      "id": "03-solo-lakeside",
+      "eyebrow": "SOLO",
+      "caption": "湖畔で、静かな一杯。",
+      "alt": "湖畔のソロキャンプで女性がコーヒーを味わう様子",
+      "desktop": "assets/hero/desktop/03-solo-lakeside.webp",
+      "mobile": "assets/hero/mobile/03-solo-lakeside.webp"
+    },
+    {
+      "id": "04-duo-tent",
+      "eyebrow": "DUO",
+      "caption": "会話のあいだに、香りがほどける。",
+      "alt": "テントの中で男女二人がコーヒーを楽しむ様子",
+      "desktop": "assets/hero/desktop/04-duo-tent.webp",
+      "mobile": "assets/hero/mobile/04-duo-tent.webp"
+    },
+    {
+      "id": "02-family-camp",
+      "eyebrow": "FAMILY",
+      "caption": "家族で囲む、朝のコーヒー。",
+      "alt": "森のキャンプ場で家族がハンドドリップコーヒーを楽しむ様子",
+      "desktop": "assets/hero/desktop/02-family-camp.webp",
+      "mobile": "assets/hero/mobile/02-family-camp.webp"
+    },
+    {
+      "id": "07-friends-tarp",
+      "eyebrow": "FRIENDS",
+      "caption": "仲間と淹れる、外の一杯。",
+      "alt": "タープの下で友人四人がコーヒーを楽しむ様子",
+      "desktop": "assets/hero/desktop/07-friends-tarp.webp",
+      "mobile": "assets/hero/mobile/07-friends-tarp.webp"
+    },
+    {
+      "id": "01-duo-forest",
+      "eyebrow": "DUO",
+      "caption": "木漏れ日の下で、ゆっくり。",
+      "alt": "森のキャンプサイトで二人がコーヒーを楽しむ様子",
+      "desktop": "assets/hero/desktop/01-duo-forest.webp",
+      "mobile": "assets/hero/mobile/01-duo-forest.webp"
+    },
+    {
+      "id": "05-family-park",
+      "eyebrow": "FAMILY",
+      "caption": "はじめてのキャンプに、一杯の余白を。",
+      "alt": "緑のキャンプ場で家族がコーヒーを淹れる様子",
+      "desktop": "assets/hero/desktop/05-family-park.webp",
+      "mobile": "assets/hero/mobile/05-family-park.webp"
+    },
+    {
+      "id": "06-family-close",
+      "eyebrow": "FAMILY",
+      "caption": "小さな手にも、コーヒーの時間。",
+      "alt": "テント前で親子三人がコーヒーを淹れて楽しむ様子",
+      "desktop": "assets/hero/desktop/06-family-close.webp",
+      "mobile": "assets/hero/mobile/06-family-close.webp"
+    }
+  ]
+}
