@@ -114,6 +114,34 @@ header.over-hero nav a:hover{color:var(--gold);}
 .marquee-track span{font-family:"Jost",sans-serif;font-size:13px;letter-spacing:.34em;color:var(--gold);white-space:nowrap;padding-right:56px;}
 @keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
+/* ---- topics ---- */
+#topics{padding:84px 0 92px;background:var(--bg2);}
+.topics-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px;}
+.topics-head h2{margin-bottom:0;}
+.topics-ig{font-family:"Jost","Noto Sans JP",sans-serif;font-size:11.5px;letter-spacing:.14em;color:var(--terra);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:5px;white-space:nowrap;transition:color .3s,border-color .3s;}
+.topics-ig:hover{color:var(--brown);border-color:var(--terra);}
+.topics-list{list-style:none;border-top:1px solid var(--line);}
+.topics-list li{border-bottom:1px solid var(--line);}
+.topics-list a{display:grid;grid-template-columns:104px 96px 1fr 22px;align-items:baseline;gap:18px;padding:22px 6px;text-decoration:none;color:inherit;transition:background .35s;}
+.topics-list a:hover,.topics-list a:focus-visible{background:rgba(180,95,47,.06);}
+.topics-date{font-family:"Jost",sans-serif;font-size:12.5px;letter-spacing:.12em;color:var(--gold);}
+.topics-tag{font-family:"Jost",sans-serif;font-size:10px;letter-spacing:.16em;color:var(--terra);border:1px solid var(--line);padding:4px 0;text-align:center;justify-self:start;width:96px;}
+.topics-body h3{font-family:"Zen Old Mincho",serif;font-size:15.5px;color:var(--brown);font-weight:600;line-height:1.75;transition:color .3s;}
+.topics-list a:hover h3{color:var(--terra);}
+.topics-body p{font-size:12.5px;color:#6b5b47;margin-top:6px;line-height:1.9;}
+.topics-arrow{font-family:"Jost",sans-serif;font-size:15px;color:var(--gold);justify-self:end;transition:transform .35s,color .35s;}
+.topics-list a:hover .topics-arrow{color:var(--terra);transform:translateX(4px);}
+.topics-note{margin-top:22px;font-size:11px;color:#8a7961;}
+@media(max-width:760px){
+  #topics{padding:64px 0 72px;}
+  .topics-list a{grid-template-columns:auto auto 1fr 20px;grid-template-areas:"date tag . arrow" "body body body body";gap:10px 12px;padding:20px 4px;align-items:center;}
+  .topics-date{grid-area:date;}
+  .topics-tag{grid-area:tag;width:auto;padding:3px 10px;}
+  .topics-body{grid-area:body;}
+  .topics-arrow{grid-area:arrow;justify-self:end;}
+  .topics-body h3{font-size:14.5px;}
+}
+
 /* ---- sections ---- */
 section{padding:110px 0;}
 .sec-en{font-size:11px;color:var(--terra);margin-bottom:14px;}
@@ -201,6 +229,7 @@ footer .logo{font-size:14px;color:var(--brown);letter-spacing:.2em;margin-bottom
 <header id="hd">
   <div class="logo en">7STORY.CO</div>
   <nav class="en">
+    <a href="#topics">Topics</a>
     <a href="#concept">Concept</a>
     <a href="#lineup">Line up</a>
     <a href="#brew">Brew</a>
@@ -298,6 +327,102 @@ footer .logo{font-size:14px;color:var(--brown);letter-spacing:.2em;margin-bottom
     <span>7STORY.CO — SPECIALTY COFFEE — DECAF — 3TYPES — 7DAYS —&nbsp;</span><span>7STORY.CO — SPECIALTY COFFEE — DECAF — 3TYPES — 7DAYS —&nbsp;</span><span>7STORY.CO — SPECIALTY COFFEE — DECAF — 3TYPES — 7DAYS —&nbsp;</span><span>7STORY.CO — SPECIALTY COFFEE — DECAF — 3TYPES — 7DAYS —&nbsp;</span>
   </div>
 </div>
+
+<section id="topics">
+  <div class="wrap">
+    <div class="topics-head">
+      <div>
+        <p class="sec-en en rv">TOPICS</p>
+        <h2 class="serif rv">これまでの、7Story.co。</h2>
+      </div>
+      <a class="topics-ig rv" href="https://www.instagram.com/7_story.co/" target="_blank" rel="noopener">INSTAGRAMで最新の発信を見る →</a>
+    </div>
+
+    <ul class="topics-list">
+      <li class="rv"><a href="https://www.instagram.com/p/DawQ5FfzMB7/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.07.13</span>
+        <span class="topics-tag">CAMPAIGN</span>
+        <span class="topics-body">
+          <h3>全ドリンク2杯目300円引きをスタート</h3>
+          <p>コーヒーの楽しさをもっと気軽に。暑い季節を一杯とともに過ごしていただくためのキャンペーンです。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DacOiMck1Kt/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.07.06</span>
+        <span class="topics-tag">EVENT</span>
+        <span class="topics-body">
+          <h3>lululemon Midosuji「Deep Connection」にLive Baristaとして出店</h3>
+          <p>“Deep Connection” をテーマに、スペシャルティコーヒーをその場でサーブしました。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DYy4oQok83v/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.05.26</span>
+        <span class="topics-tag">MEDIA</span>
+        <span class="topics-body">
+          <h3>ラジオ大阪OBC『和田麻実子のみみよりだんご』に出演</h3>
+          <p>「みみだんジャーナル」のコーナーで、コーヒーの魅力についてお話ししました。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DXyB7mME30O/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.05.01</span>
+        <span class="topics-tag">GIFT</span>
+        <span class="topics-body">
+          <h3>BS朝日『花食同源』番組コラボSP・母の日コーヒーギフト</h3>
+          <p>花人・赤井勝氏の番組とのコラボ企画。メッセージ入りの7缶セットを数量限定でご用意しました。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DXs4GZrE-Lh/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.04.28</span>
+        <span class="topics-tag">INFO</span>
+        <span class="topics-body">
+          <h3>ゴールデンウィーク特別営業のお知らせ</h3>
+          <p>5月1日から6日まで9:00〜21:00で営業。連休中も特別なコーヒー体験をお届けしました。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DVfyQkKk-8J/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.03.05</span>
+        <span class="topics-tag">PROJECT</span>
+        <span class="topics-body">
+          <h3>MAMECAN PROJECT（豆缶プロジェクト）始動</h3>
+          <p>創業77年の金型メーカーとタッグを組んだ、本物志向のモノづくりにこだわる缶ブランドです。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/p/DTujGTQk6Ng/" target="_blank" rel="noopener">
+        <span class="topics-date en">2026.01.20</span>
+        <span class="topics-tag">COMMUNITY</span>
+        <span class="topics-body">
+          <h3>「7Running｜ナナラン」始動 — ランニング × コーヒー</h3>
+          <p>走ったあとの一杯と、そこで生まれる出会い。年齢も国籍も問わない、新しい体験の場です。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+
+      <li class="rv"><a href="https://www.instagram.com/reel/DRvwh8Nk9J2/" target="_blank" rel="noopener">
+        <span class="topics-date en">2025.11.29</span>
+        <span class="topics-tag">ANNIVERSARY</span>
+        <span class="topics-body">
+          <h3>7Story.co 1st Anniversary（1周年）</h3>
+          <p>記念イベントを開催。足を運んでくださった皆さまのおかげで、無事に1周年を迎えました。</p>
+        </span>
+        <span class="topics-arrow" aria-hidden="true">↗</span>
+      </a></li>
+    </ul>
+
+    <p class="topics-note rv">※各トピックをクリックすると、当日の写真と詳細（Instagram）をご覧いただけます。</p>
+  </div>
+</section>
 
 <section id="concept">
   <div class="wrap">
