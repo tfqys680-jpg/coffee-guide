@@ -34,13 +34,16 @@ img{max-width:100%;display:block;}
 #intro{position:fixed;inset:0;background:#fff;z-index:100;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;transition:opacity .9s ease,visibility .9s;}
 #intro .en{font-size:11px;color:var(--mut);opacity:0;animation:introFade 1.4s ease .2s forwards;}
 #intro .big{font-family:"Oswald",sans-serif;font-size:clamp(30px,6vw,52px);letter-spacing:.14em;color:var(--ink);text-transform:uppercase;opacity:0;animation:introFade 1.4s ease .5s forwards;}
+#intro .big img{display:block;width:clamp(180px,24vw,280px);height:auto;object-fit:contain;filter:brightness(.08);}
 #intro.out{opacity:0;visibility:hidden;}
 @keyframes introFade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 
 /* ---- header ---- */
 header{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;transition:background .4s,box-shadow .4s;}
 header.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line);}
-header .logo{font-family:"Oswald",sans-serif;font-size:17px;color:var(--ink);letter-spacing:.18em;text-transform:uppercase;transition:color .4s;}
+header .logo{font-family:"Oswald",sans-serif;font-size:17px;color:var(--ink);letter-spacing:.18em;text-transform:uppercase;transition:color .4s;display:flex;align-items:center;min-height:34px;text-decoration:none;}
+.header-logo-image{display:block;width:clamp(96px,8vw,112px);height:auto;object-fit:contain;filter:brightness(.08);transition:filter .4s;}
+header.over-hero .header-logo-image{filter:none;}
 header nav{display:flex;gap:24px;}
 header nav a{font-size:11.5px;color:var(--ink);text-decoration:none;letter-spacing:.2em;transition:color .4s,opacity .3s;}
 header nav a:hover{opacity:.55;}
@@ -259,7 +262,7 @@ footer .logo{font-family:"Oswald",sans-serif;font-size:clamp(28px,5vw,44px);colo
 <body>
 
 <header id="hd">
-  <div class="logo">7STORY.CO</div>
+  <a class="logo" href="./" aria-label="7story.co トップページへ"><img class="header-logo-image" src="assets/branding/7story-co-logo-white-header.png" alt="7story.co" width="1200" height="340" decoding="async"></a>
   <nav class="en">
     <a href="#topics">Topics</a>
     <a href="#shop">Stand</a>
@@ -705,7 +708,7 @@ footer .logo{font-family:"Oswald",sans-serif;font-size:clamp(28px,5vw,44px);colo
     introActive = true;
     var intro=document.createElement("div");
     intro.id="intro";
-    intro.innerHTML='<p class="en">SPECIALTY COFFEE IN A CAN</p><p class="big">7Story.co</p>';
+    intro.innerHTML='<p class="en">SPECIALTY COFFEE IN A CAN</p><p class="big"><img src="assets/branding/7story-co-logo-white-header.png" alt="7story.co" width="1200" height="340"></p>';
     document.body.appendChild(intro);
     setTimeout(function(){intro.classList.add("out");setTimeout(function(){intro.remove();},1000);},1700);
   }
