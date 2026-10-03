@@ -42,7 +42,7 @@ img{max-width:100%;display:block;}
 header{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;transition:background .4s,box-shadow .4s;}
 header.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line);}
 header .logo{font-family:"Oswald",sans-serif;font-size:17px;color:var(--ink);letter-spacing:.18em;text-transform:uppercase;transition:color .4s;display:flex;align-items:center;min-height:34px;text-decoration:none;}
-.header-logo-image{display:block;width:clamp(42px,3.8vw,48px);height:auto;object-fit:contain;filter:brightness(.08);transition:filter .4s;}
+.header-logo-image{display:block;width:clamp(96px,8vw,112px);height:auto;object-fit:contain;filter:brightness(.08);transition:filter .4s;}
 header.over-hero .header-logo-image{filter:none;}
 header nav{display:flex;gap:24px;}
 header nav a{font-size:11.5px;color:var(--ink);text-decoration:none;letter-spacing:.2em;transition:color .4s,opacity .3s;}
@@ -243,6 +243,7 @@ footer{padding:56px 0 44px;text-align:center;background:var(--dark);color:#8f887
 footer .footer-links{margin-bottom:12px;font-size:13px;}
 footer .footer-links a{color:#cfc8bb;text-decoration:underline;}
 footer .logo{font-family:"Oswald",sans-serif;font-size:clamp(28px,5vw,44px);color:#fff;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;}
+footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);height:auto;}
 
 /* ---- scroll reveal ---- */
 .rv{opacity:0;transform:translateY(34px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,.7,.2,1);}
@@ -268,7 +269,7 @@ footer .logo{font-family:"Oswald",sans-serif;font-size:clamp(28px,5vw,44px);colo
 <body>
 
 <header id="hd">
-  <a class="logo" href="./" aria-label="7story.co トップページへ"><img class="header-logo-image" src="assets/branding/7story-co-badge-white.png" alt="7story.co" width="800" height="754" decoding="async"></a>
+  <a class="logo" href="./" aria-label="7story.co トップページへ"><img class="header-logo-image" src="assets/branding/7story-co-wordmark-white.png" alt="7story.co" width="1200" height="304" decoding="async"></a>
   <nav class="en">
     <a href="#topics">Topics</a>
     <a href="#shop">Stand</a>
@@ -705,7 +706,7 @@ footer .logo{font-family:"Oswald",sans-serif;font-size:clamp(28px,5vw,44px);colo
 
 <footer>
   <div class="wrap">
-    <p class="logo">7STORY.CO</p>
+    <p class="logo"><img src="assets/branding/7story-co-wordmark-white.png" alt="7STORY.CO" width="1200" height="304" loading="lazy" decoding="async"></p>
     <p class="footer-links"><a href="https://mamecan.jp/" target="_blank" rel="noopener">豆缶プロジェクト（オリジナルデザインの豆缶）</a></p>
     <p>本ページは製品紹介と一般的な情報提供を目的としたものです。</p>
   </div>
