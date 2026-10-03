@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7Story.co はサイトを移転しました</title>
+<meta name="description" content="7Story.co のサイトは https://7story.co.jp/ へ移転しました。自動的に転送されます。">
+<link rel="canonical" href="https://7story.co.jp/">
+<script>
+/* JavaScript が有効な環境では即時転送する。
+   #lineup などのハッシュとクエリ文字列を引き継ぐため、
+   meta refresh よりも先に実行している。 */
+(function () {
+  var base = "https://7story.co.jp/";
+  try {
+    window.location.replace(base + (window.location.search || "") + (window.location.hash || ""));
+  } catch (e) {
+    window.location.href = base;
+  }
+})();
+</script>
+<meta http-equiv="refresh" content="0; url=https://7story.co.jp/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  background:#ffffff;color:#141414;line-height:1.9;letter-spacing:.04em;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+}
+main{max-width:520px;text-align:center;}
+.en{
+  font-size:13px;letter-spacing:.28em;text-transform:uppercase;
+  color:#6f6b64;margin-bottom:28px;
+}
+h1{font-size:22px;font-weight:700;letter-spacing:.06em;margin-bottom:20px;}
+p{font-size:15px;color:#3c3a37;}
+.url{
+  display:inline-block;margin:4px 0 24px;font-size:15px;font-weight:700;
+  color:#141414;word-break:break-all;
+}
+.btn{
+  display:inline-block;margin-top:14px;padding:14px 32px;
+  background:#141414;color:#ffffff;text-decoration:none;
+  font-size:14px;font-weight:700;letter-spacing:.1em;border-radius:2px;
+  transition:background .2s ease;
+}
+.btn:hover,.btn:focus{background:#b45f2f;}
+.note{margin-top:28px;font-size:13px;color:#6f6b64;line-height:1.8;}
+@media (max-width:480px){
+  h1{font-size:19px;}
+  p{font-size:14px;}
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="en">7Story.co</p>
+  <h1>サイトを移転しました</h1>
+  <p>新しい URL はこちらです。</p>
+  <p class="url">https://7story.co.jp/</p>
+  <p>数秒たっても移動しない場合は、下のボタンからお進みください。</p>
+  <p><a class="btn" href="https://7story.co.jp/">新しいサイトへ移動</a></p>
+  <p class="note">ブックマークをご登録いただいている方は、<br>お手数ですが新しい URL への変更をお願いいたします。</p>
+</main>
+</body>
+</html>

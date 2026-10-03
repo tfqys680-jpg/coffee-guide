@@ -1,0 +1,7 @@
+# Vercel のデプロイ対象から除外するパス
+# （.gitignore と同じ記法。ここに書いたものはビルド/配信に含まれない）
+
+# 旧 GitHub Pages 用のリダイレクトページ。
+# 本番サイト（7story.co.jp）には不要なので除外する。
+# ドメイン有効化後、この中身を手動で GitHub Pages 側へ反映する。
+gh-pages-redirect/
