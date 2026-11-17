@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff; --ink:#141414; --mut:#6f6b64; --line:#e4e1db; --dark:#101010; --accent:#b45f2f;
@@ -65,7 +65,11 @@ header.over-hero nav a{color:#f2efe9;}
 /* ---- full-bleed banner (Deus style) ---- */
 .banner{position:relative;height:82vh;min-height:460px;overflow:hidden;background:var(--dark);}
 .banner>img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform;}
-.banner .cap{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;text-align:center;background:linear-gradient(to top,rgba(10,8,6,.55) 0%,rgba(10,8,6,.18) 45%,rgba(10,8,6,.28) 100%);padding:0 20px;}
+.banner .cap{
+  --banner-shade:linear-gradient(to top,rgba(10,8,6,.55) 0%,rgba(10,8,6,.18) 45%,rgba(10,8,6,.28) 100%);
+  position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:14px;text-align:center;background:var(--banner-shade);padding:0 20px;
+}
 .banner .cap .eyebrow{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#e6ddce;}
 .banner .cap .title{font-family:"Oswald",sans-serif;font-size:clamp(42px,8vw,88px);line-height:1.08;letter-spacing:.08em;text-transform:uppercase;color:#fff;font-weight:600;text-shadow:0 2px 24px rgba(0,0,0,.35);}
 .banner .cap .jp{font-size:clamp(13px,1.6vw,16px);color:#f2efe9;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.4);}
@@ -74,42 +78,86 @@ header.over-hero nav a{color:#f2efe9;}
 .btn-ghost:hover{background:#fff;color:var(--ink);}
 
 /* ---- second anniversary ---- */
+#hero:has(.anniversary:not([hidden])){min-height:540px;}
+#hero:has(.anniversary:not([hidden])) .cap{
+  --anniversary-shade:radial-gradient(ellipse at 50% 51%,#0b0806b8 8%,#0b08065e 39%,transparent 74%);
+  justify-content:flex-end;align-items:flex-start;gap:3px;padding:0 26px 18px;text-align:left;
+  background:var(--anniversary-shade),var(--banner-shade);
+}
+#hero:has(.anniversary:not([hidden])) .cap .eyebrow{display:none;}
+#hero:has(.anniversary:not([hidden])) .cap .title{font-size:16px;}
+#hero:has(.anniversary:not([hidden])) .cap .title br{display:none;}
+#hero:has(.anniversary:not([hidden])) .cap .jp{font-size:11px;}
+#hero:has(.anniversary:not([hidden])) .cap .btn-ghost{
+  display:inline-flex;align-items:center;margin-top:5px;padding:7px 12px;font-size:11px;min-height:44px;
+}
+#hero:has(.anniversary:not([hidden])) .cap .btn-ghost:not(:hover){background:#17110da6;}
 .anniversary{
-  position:absolute;z-index:3;inset-inline:0;bottom:20px;
-  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px;
-  width:min(680px,calc(100% - 32px));margin-inline:auto;padding:12px 16px;
-  border:1px solid #fff5e763;border-radius:8px;
-  background:#191410db;color:#fff6e9;text-align:center;
-  backdrop-filter:blur(8px);
+  position:absolute;z-index:3;inset:0;
+  display:grid;place-items:center;padding:64px 18px;
+  color:#fff6e9;text-align:center;pointer-events:none;
 }
 .anniversary[hidden],.anniversary-clock[hidden],.anniversary-status[hidden]{display:none;}
-.anniversary-title{margin:0;color:inherit;font-size:15px;line-height:1.3;}
-.anniversary-date{margin:4px 0 0;color:#e7c7a8;font-size:12px;line-height:1.3;white-space:nowrap;}
-.anniversary-clock{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
-  width:min(100%,288px);margin-inline:auto;
+.anniversary-inner{width:min(100%,560px);}
+.anniversary-rule{
+  display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,24px);
+  width:min(100%,480px);margin-inline:auto;
+  font-size:clamp(13px,2.1vw,21px);line-height:1.3;letter-spacing:.23em;white-space:nowrap;
+  text-shadow:0 2px 8px #100a06;
 }
-.anniversary-clock-part{display:flex;flex-direction:column;gap:5px;min-width:0;}
+.anniversary-rule::before,.anniversary-rule::after{
+  content:"";flex:1;max-width:105px;border-top:1px solid currentColor;opacity:.8;
+}
+.anniversary-title{margin:0;color:inherit;}
+.anniversary-mark{
+  display:table;margin:9px auto 3px;padding-right:.045em;
+  font-family:"Archivo Black",Arial,sans-serif;font-weight:400;
+  font-size:min(37vw,40vh,465px);font-size:min(37vw,40svh,465px);
+  letter-spacing:-.09em;line-height:.85;color:#ecb782;
+}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .anniversary-mark{
+    background:url("assets/anniversary/storefront-dusk.webp") 49% 55% / 155% auto no-repeat;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    -webkit-text-stroke:clamp(1.4px,.16vw,2.5px) #fff6e9;
+    filter:drop-shadow(0 3px 10px #0008);
+  }
+}
+.anniversary-name{
+  display:block;font-family:"Oswald",sans-serif;font-size:clamp(11px,1.35vw,15px);
+  line-height:1.3;letter-spacing:.34em;text-transform:uppercase;margin:6px 0 10px;
+  text-shadow:0 2px 8px #100a06;
+}
+.anniversary-clock{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.5vw,16px);
+  width:min(100%,480px);margin:11px auto 0;
+}
+.anniversary-clock-part{display:flex;flex-direction:column;gap:6px;min-width:0;}
 .anniversary-value{
-  display:grid;place-items:center;position:relative;border:1px solid #82746a;border-radius:5px;
+  display:grid;place-items:center;position:relative;border:1px solid #9d8b7e;border-radius:8px;
   min-height:1.2em;
-  font:bold clamp(29px,4vw,38px)/1 Cambria,Georgia,serif;
+  font:bold clamp(32px,7vw,min(7.4vh,63px))/1 Cambria,Georgia,serif;
   font-variant-numeric:lining-nums tabular-nums;
   background:linear-gradient(#3b342e,#161310 49%,#100e0c 50%,#221c18);
+  box-shadow:inset 0 1px 1px #ffffff36,0 4px 15px #0007;
   text-shadow:0 2px 2px #000;
 }
 .anniversary-value::after{
   content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid #090706a6;
 }
 .anniversary-unit{
-  font-family:"Oswald",sans-serif;font-size:10px;line-height:1.25;
-  letter-spacing:.16em;text-transform:uppercase;
+  font-family:"Oswald",sans-serif;font-size:clamp(10px,1.2vw,14px);line-height:1.25;
+  letter-spacing:.21em;text-transform:uppercase;text-shadow:0 2px 5px #000;
 }
-.anniversary-status{font-size:14px;font-weight:700;}
+.anniversary-status{margin-top:12px;font-size:16px;font-weight:700;text-shadow:0 2px 5px #000;}
+.anniversary-motto{
+  margin:10px auto 12px;font:italic clamp(17px,2.25vw,27px)/1.2 Georgia,serif;
+  text-shadow:0 2px 8px #000;
+}
 .anniversary-link{
-  display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px;
-  padding:4px 12px;border:1px solid #fff6e9a6;font-size:12px;
-  color:inherit;text-decoration:none;white-space:nowrap;
+  display:inline-flex;justify-content:center;align-items:center;gap:12px;min-height:44px;
+  padding:4px clamp(18px,3vw,40px);border:1px solid #fff6e9;background:#17110da6;
+  font-size:clamp(11px,1.2vw,14px);color:inherit;text-decoration:none;pointer-events:auto;
   transition:background .2s,color .2s;
 }
 .anniversary-link:hover,.anniversary-link:focus-visible{background:#fff6e9;color:#17110d;}
@@ -123,23 +171,25 @@ header.over-hero nav a{color:#f2efe9;}
 .anniversary-info p:not(.en){font-size:14px;margin-bottom:6px;}
 .anniversary-info .en{color:#7c3d21;font-size:11px;}
 .anniversary-info a{color:var(--ink);text-underline-offset:4px;}
-@media(max-height:740px) and (min-width:601px){
-  #hero:has(.anniversary:not([hidden])) .cap{padding-top:64px;padding-bottom:111px;}
-  #hero:has(.anniversary:not([hidden])) .cap .title{font-size:clamp(42px,9.5vh,88px);}
-}
-@media(max-width:600px){
-  .anniversary{
-    bottom:14px;grid-template-columns:1fr auto;gap:8px 12px;padding:10px 12px;
-    width:min(420px,calc(100% - 24px));
+@media(max-width:1100px){
+  #hero:has(.anniversary:not([hidden])) .cap{align-items:center;padding-bottom:12px;}
+  #hero:has(.anniversary:not([hidden])) .cap .title,
+  #hero:has(.anniversary:not([hidden])) .cap .jp{
+    position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);
   }
-  .anniversary-heading{text-align:left;}
-  .anniversary-title{font-size:13px;}
-  .anniversary-clock,.anniversary-status{grid-column:1 / -1;grid-row:2;}
-  .anniversary-link{padding-inline:8px;}
 }
-@media(max-width:600px) and (max-height:720px){
-  #hero:has(.anniversary:not([hidden])) .cap{padding-top:60px;padding-bottom:150px;gap:10px;}
-  #hero:has(.anniversary:not([hidden])) .cap .btn-ghost{margin-top:4px;}
+@media(max-height:790px) and (min-width:641px){
+  .anniversary-mark{font-size:min(37vw,max(150px,calc(56vh - 168px)));}
+  .anniversary-rule{font-size:17px;}
+  .anniversary-motto{font-size:21px;}
+}
+@media(max-width:640px){
+  #hero:has(.anniversary:not([hidden])) .cap{
+    --anniversary-shade:radial-gradient(ellipse at 50% 51%,#0b0806cf 6%,#0b08067d 56%,transparent 98%);
+  }
+  .anniversary{padding-inline:16px;}
+  .anniversary-mark{font-size:min(65vw,34vh,305px);font-size:min(65vw,34svh,305px);}
+  .anniversary-clock{max-width:390px;}
 }
 @media(prefers-reduced-motion:reduce){.anniversary-link{transition:none;}}
 
@@ -292,36 +342,41 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
   <img src="assets/photos/shop-17.jpg" alt="大阪の街角に立つ7story.coの店舗外観" style="object-position:center 72%;" fetchpriority="high" decoding="async">
   <div class="cap">
     <p class="eyebrow">OSAKA, JAPAN</p>
-    <h1 class="title">STANDING<br>COFFEE</h1>
+    <h1 class="title">STANDING<br> COFFEE</h1>
     <p class="jp">街角のガレージが、立ち飲みのコーヒースタンド。</p>
     <a class="btn-ghost" href="#shop">THE STANDを見る</a>
   </div>
   <section class="anniversary" id="anniversary" aria-labelledby="anniversary-title" hidden
     data-start="2026-11-28T00:00:00+09:00" data-end="2026-11-30T00:00:00+09:00">
-    <div class="anniversary-heading">
-      <h2 class="anniversary-title en" id="anniversary-title" lang="en">2nd Anniversary</h2>
-      <p class="anniversary-date en" lang="en">
-        <time datetime="2026-11-28">Nov 28</time>–<time datetime="2026-11-29">29, 2026</time>
+    <div class="anniversary-inner">
+      <p class="anniversary-rule en" lang="en">Osaka, Japan</p>
+      <h2 class="anniversary-title" id="anniversary-title" lang="en">
+        <span class="anniversary-mark" aria-hidden="true">02</span>
+        <span class="anniversary-name">2nd Anniversary</span>
+      </h2>
+      <p class="anniversary-rule en" lang="en">
+        <span><time datetime="2026-11-28">Nov 28</time>–<time datetime="2026-11-29">29, 2026</time></span>
       </p>
+      <div class="anniversary-clock" role="timer" aria-label="開催日までの残り時間" hidden>
+        <div class="anniversary-clock-part">
+          <span class="anniversary-value" data-count="days"></span><span class="anniversary-unit" lang="en">Days</span>
+        </div>
+        <div class="anniversary-clock-part">
+          <span class="anniversary-value" data-count="hours"></span><span class="anniversary-unit" lang="en">Hours</span>
+        </div>
+        <div class="anniversary-clock-part">
+          <span class="anniversary-value" data-count="minutes"></span><span class="anniversary-unit" lang="en">Min</span>
+        </div>
+        <div class="anniversary-clock-part">
+          <span class="anniversary-value" data-count="seconds"></span><span class="anniversary-unit" lang="en">Sec</span>
+        </div>
+      </div>
+      <p class="anniversary-status" hidden>2周年イベント開催日</p>
+      <p class="anniversary-motto" lang="en">coffee has stories, so do you.</p>
+      <a class="anniversary-link en" href="#anniversary-info" aria-label="Anniversary Info（2周年イベント案内）">
+        <span lang="en">Anniversary Info</span><span aria-hidden="true">›</span>
+      </a>
     </div>
-    <div class="anniversary-clock" role="timer" aria-label="開催日までの残り時間" hidden>
-      <div class="anniversary-clock-part">
-        <span class="anniversary-value" data-count="days"></span><span class="anniversary-unit" lang="en">Days</span>
-      </div>
-      <div class="anniversary-clock-part">
-        <span class="anniversary-value" data-count="hours"></span><span class="anniversary-unit" lang="en">Hours</span>
-      </div>
-      <div class="anniversary-clock-part">
-        <span class="anniversary-value" data-count="minutes"></span><span class="anniversary-unit" lang="en">Min</span>
-      </div>
-      <div class="anniversary-clock-part">
-        <span class="anniversary-value" data-count="seconds"></span><span class="anniversary-unit" lang="en">Sec</span>
-      </div>
-    </div>
-    <p class="anniversary-status" hidden>2周年イベント開催日</p>
-    <a class="anniversary-link" href="#anniversary-info" aria-label="イベント案内（7Story.co 2周年）">
-      イベント案内<span aria-hidden="true">›</span>
-    </a>
   </section>
 </div>
 
