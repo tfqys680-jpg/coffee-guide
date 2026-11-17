@@ -1,0 +1,7 @@
+{
+  "url": "https://7story.co.jp/",
+  "lastmod": "2026-10-03",
+  "change_type": "significant",
+  "reason": "PR #9 (dfff486) と #10 (32bd552) が2026-10-03 JSTにTopicsの紹介文・見出し・リンクを追加。最新main a6b8b8bまでの履歴を照合し、同日以降の本文更新がないことを確認。詳細は docs/sitemap.md。",
+  "content_sha256": "122c6a484b0bee8f35b7814892ab40777ac56c83432ef8d4370a4f6045b02510"
+}

@@ -5,3 +5,10 @@
 # 本番サイト（7story.co.jp）には不要なので除外する。
 # ドメイン有効化後、この中身を手動で GitHub Pages 側へ反映する。
 gh-pages-redirect/
+
+# 開発用の検証・履歴資料は静的サイトに配信しない。
+.github/
+scripts/
+tests/
+seo/
+docs/
