@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff; --ink:#141414; --mut:#6f6b64; --line:#e4e1db; --dark:#101010; --accent:#b45f2f;
@@ -72,6 +72,113 @@ header.over-hero nav a{color:#f2efe9;}
 .banner .cap .btn-ghost{margin-top:14px;}
 .btn-ghost{display:inline-block;font-family:"Oswald","Noto Sans JP",sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#fff;border:1px solid #fff;padding:14px 40px;text-decoration:none;background:transparent;transition:background .35s,color .35s;}
 .btn-ghost:hover{background:#fff;color:var(--ink);}
+
+/* ---- second anniversary ---- */
+.anniversary{
+  --storefront:url("assets/anniversary/storefront-dusk.webp");
+  position:relative;isolation:isolate;display:grid;place-items:center;
+  min-height:100vh;min-height:100svh;padding:80px 20px 26px;
+  background:#17110d;color:#fff6e9;text-align:center;
+}
+.anniversary::before,.anniversary::after{content:"";position:absolute;inset:0;z-index:-1;}
+.anniversary::before{background:var(--storefront) 50% 58% / cover no-repeat;}
+.anniversary::after{
+  background:
+    linear-gradient(180deg,rgba(5,4,3,.70),transparent 23%,transparent 57%,rgba(5,4,3,.59)),
+    radial-gradient(ellipse at 50% 53%,rgba(7,5,4,.77),rgba(7,5,4,.40) 36%,rgba(7,5,4,.04) 78%);
+}
+.anniversary[hidden],.anniversary-clock[hidden],.anniversary-status[hidden]{display:none;}
+.anniversary-inner{width:min(100%,720px);}
+.anniversary-rule{
+  display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,29px);
+  width:min(100%,550px);margin-inline:auto;
+  font-size:clamp(13px,2.3vw,23px);line-height:1.3;letter-spacing:.25em;
+  white-space:nowrap;text-shadow:0 2px 10px #130b05;
+}
+.anniversary-rule::before,.anniversary-rule::after{
+  content:"";flex:1;max-width:115px;border-top:1px solid currentColor;opacity:.78;
+}
+.anniversary-title{margin:0;color:inherit;}
+.anniversary-mark{
+  display:table;margin:0 auto;padding-right:.045em;
+  font-family:"Archivo Black",Arial,sans-serif;font-weight:400;
+  font-size:min(38vw,49vh,520px);font-size:min(38vw,49svh,520px);
+  letter-spacing:-.09em;line-height:.95;
+  color:#ecb782;text-shadow:none;
+}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .anniversary-mark{
+    background:var(--storefront) 49% 54% / 155% auto no-repeat;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    -webkit-text-stroke:clamp(1.4px,.16vw,2.5px) #fff6e9;
+    filter:drop-shadow(0 3px 10px rgba(0,0,0,.55));
+  }
+}
+.anniversary-name{
+  display:block;font-family:"Oswald",sans-serif;font-size:clamp(10px,1.1vw,14px);
+  line-height:1.35;letter-spacing:.36em;text-transform:uppercase;margin:2px 0 12px;
+  text-shadow:0 2px 10px #130b05;
+}
+.anniversary-clock{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.8vw,20px);
+  width:min(100%,538px);margin:14px auto 0;
+}
+.anniversary-clock-part{display:flex;flex-direction:column;gap:7px;min-width:0;}
+.anniversary-value{
+  display:grid;place-items:center;position:relative;border:1px solid #82746a;border-radius:9px;
+  line-height:1;padding:.045em 0 .09em;min-height:1.18em;
+  font:bold clamp(33px,9.5vw,min(8.8svh,72px))/1 Cambria,Georgia,serif;
+  font-variant-numeric:lining-nums tabular-nums;
+  background:linear-gradient(#3b342e,#161310 49%,#100e0c 50%,#221c18);
+  box-shadow:inset 0 1px 1px #ffffff36,0 4px 15px #0007;
+  text-shadow:0 2px 2px #000;
+}
+.anniversary-value::after{
+  content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid #090706a6;
+}
+.anniversary-unit{
+  font-family:"Oswald",sans-serif;font-size:clamp(10px,1.35vw,15px);line-height:1.15;
+  letter-spacing:.22em;text-transform:uppercase;text-shadow:0 2px 6px #000;
+}
+.anniversary-status{margin:22px auto 8px;font-size:clamp(16px,2.6vw,22px);font-weight:700;}
+.anniversary-motto{
+  margin:12px auto 18px;font:italic clamp(17px,2.6vw,31px)/1.25 Georgia,serif;
+  text-shadow:0 2px 8px #000;
+}
+.anniversary-link{
+  display:inline-flex;justify-content:center;align-items:center;gap:15px;min-height:44px;
+  padding:6px clamp(18px,3.5vw,42px);border:1px solid #fff6e9;background:#110c08a6;
+  font-size:clamp(11px,1.5vw,15px);color:inherit;text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.anniversary-link:hover,.anniversary-link:focus-visible{background:#fff6e9;color:#17110d;}
+.anniversary-link:focus-visible,.anniversary-scroll:focus-visible{outline:2px solid #fff6e9;outline-offset:4px;}
+.anniversary-scroll{
+  display:grid;place-items:center;width:44px;height:44px;margin:4px auto -12px;color:inherit;
+}
+.anniversary-scroll::before{content:"";width:19px;height:19px;border:solid currentColor;border-width:0 2px 2px 0;transform:translateY(-4px) rotate(45deg);}
+.anniversary-info{
+  margin-bottom:28px;padding:24px clamp(18px,4vw,40px);
+  border:1px solid var(--line);border-left:3px solid var(--accent);background:#f6f4f0;
+  scroll-margin-top:90px;
+}
+.anniversary-info h3{font-size:clamp(18px,3vw,24px);line-height:1.5;margin:4px 0 9px;}
+.anniversary-info p:not(.en){font-size:14px;margin-bottom:6px;}
+.anniversary-info .en{color:#7c3d21;font-size:11px;}
+.anniversary-info a{color:var(--ink);text-underline-offset:4px;}
+@media(max-width:640px){
+  .anniversary{padding:76px 20px 28px;}
+  .anniversary::before{background-position:45% 58%;}
+  .anniversary::after{
+    background:linear-gradient(180deg,#0b0806a6,transparent 17%,#0b080657 42%,#0b0806d9 87%,#0b080683),
+      radial-gradient(ellipse at 50% 49%,#100a08a8,transparent 80%);
+  }
+  .anniversary-mark{font-size:min(64vw,42vh,315px);font-size:min(64vw,42svh,315px);}
+  .anniversary-name{margin-bottom:16px;}
+  .anniversary-clock{margin-top:18px;}
+  .anniversary-motto{margin-top:19px;}
+}
+@media(prefers-reduced-motion:reduce){.anniversary-link{transition:none;}}
 
 /* ---- sections ---- */
 section{padding:110px 0;}
@@ -218,6 +325,41 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
   </nav>
 </header>
 
+<div id="masthead">
+<section class="anniversary" id="anniversary" aria-labelledby="anniversary-title" hidden
+    data-start="2026-11-28T00:00:00+09:00" data-end="2026-11-30T00:00:00+09:00">
+  <div class="anniversary-inner">
+    <p class="anniversary-rule en" lang="en">Osaka, Japan</p>
+    <h2 class="anniversary-title" id="anniversary-title" aria-label="7Story.co 2周年イベント">
+      <span class="anniversary-mark" aria-hidden="true">02</span>
+      <span class="anniversary-name" lang="en">2nd Anniversary</span>
+    </h2>
+    <p class="anniversary-rule en" lang="en">
+      <span><time datetime="2026-11-28">Nov 28</time>–<time datetime="2026-11-29">29, 2026</time></span>
+    </p>
+    <div class="anniversary-clock" role="timer" aria-label="開催日までの残り時間" hidden>
+      <div class="anniversary-clock-part">
+        <span class="anniversary-value" data-count="days"></span><span class="anniversary-unit" lang="en">Days</span>
+      </div>
+      <div class="anniversary-clock-part">
+        <span class="anniversary-value" data-count="hours"></span><span class="anniversary-unit" lang="en">Hours</span>
+      </div>
+      <div class="anniversary-clock-part">
+        <span class="anniversary-value" data-count="minutes"></span><span class="anniversary-unit" lang="en">Min</span>
+      </div>
+      <div class="anniversary-clock-part">
+        <span class="anniversary-value" data-count="seconds"></span><span class="anniversary-unit" lang="en">Sec</span>
+      </div>
+    </div>
+    <p class="anniversary-status" hidden>2周年イベント開催日</p>
+    <p class="anniversary-motto" lang="en">coffee has stories, so do you.</p>
+    <a class="anniversary-link en" href="#anniversary-info" aria-label="Anniversary Info（2周年イベントのご案内）">
+      <span lang="en">Anniversary Info</span><span aria-hidden="true">›</span>
+    </a>
+    <a class="anniversary-scroll" href="#hero" aria-label="Standing Coffeeの紹介へ"></a>
+  </div>
+</section>
+
 <div class="banner" id="hero">
   <img src="assets/photos/shop-17.jpg" alt="大阪の街角に立つ7story.coの店舗外観" style="object-position:center 72%;" fetchpriority="high" decoding="async">
   <div class="cap">
@@ -226,6 +368,7 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
     <p class="jp">街角のガレージが、立ち飲みのコーヒースタンド。</p>
     <a class="btn-ghost" href="#shop">THE STANDを見る</a>
   </div>
+</div>
 </div>
 
 <div class="marquee" aria-hidden="true">
@@ -243,6 +386,15 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
       </div>
       <a class="topics-ig rv" href="https://www.instagram.com/7_story.co/" target="_blank" rel="noopener">INSTAGRAMで最新の発信を見る →</a>
     </div>
+
+    <article class="anniversary-info" id="anniversary-info" aria-labelledby="anniversary-info-title" hidden>
+      <p class="en" lang="en">7Story.co · 2nd Anniversary</p>
+      <h3 id="anniversary-info-title">2周年イベントのお知らせ</h3>
+      <p><strong><time datetime="2026-11-28">2026年11月28日（土）</time>・<time datetime="2026-11-29">29日（日）</time></strong></p>
+      <p>7Story.coの2周年を記念し、大阪・福島のStanding Coffeeでイベントを開催します。</p>
+      <p>大阪府大阪市福島区福島1丁目2-4 ヤタリュウビル1F</p>
+      <p><a href="https://www.instagram.com/7_story.co/" target="_blank" rel="noopener">公式Instagramで最新のお知らせを見る ↗</a></p>
+    </article>
 
     <ul class="topics-list">
       <li class="rv"><a href="https://mamecan.jp/" target="_blank" rel="noopener">
@@ -640,8 +792,47 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // カウントダウンは日本時間の開催初日まで。イベント終了後は通常のトップへ。
+  var anniversary=document.getElementById("anniversary");
+  var anniversaryInfo=document.getElementById("anniversary-info");
+  var anniversaryClock=anniversary.querySelector(".anniversary-clock");
+  var anniversaryStatus=anniversary.querySelector(".anniversary-status");
+  var countValues=anniversaryClock.querySelectorAll("[data-count]");
+  var startsAt=Date.parse(anniversary.dataset.start);
+  var endsAt=Date.parse(anniversary.dataset.end);
+  var anniversaryTimeout;
+  function updateAnniversary(){
+    clearTimeout(anniversaryTimeout);
+    var now=Date.now();
+    var eventOver=now>=endsAt;
+    anniversary.hidden=eventOver;
+    anniversaryInfo.hidden=eventOver;
+    if(eventOver)return;
+
+    var countingDown=now<startsAt;
+    anniversaryClock.hidden=!countingDown;
+    anniversaryStatus.hidden=countingDown;
+    if(!countingDown){
+      anniversaryTimeout=setTimeout(updateAnniversary,endsAt-now);
+      return;
+    }
+
+    var seconds=Math.ceil((startsAt-now)/1000);
+    var parts=[Math.floor(seconds/86400),Math.floor(seconds/3600)%24,Math.floor(seconds/60)%60,seconds%60];
+    countValues.forEach(function(el,index){
+      var value=String(parts[index]).padStart(2,"0");
+      if(el.textContent!==value)el.textContent=value;
+    });
+    anniversaryTimeout=setTimeout(updateAnniversary,1000-(now%1000));
+  }
+  updateAnniversary();
+  window.addEventListener("pageshow",updateAnniversary);
+  document.addEventListener("visibilitychange",function(){
+    if(!document.hidden)updateAnniversary();
+  });
+
   // intro（1セッション1回）
-  if(!reduce && !sessionStorage.getItem("introShown")){
+  if(anniversary.hidden && !reduce && !sessionStorage.getItem("introShown")){
     sessionStorage.setItem("introShown","1");
     var intro=document.createElement("div");
     intro.id="intro";
@@ -652,7 +843,7 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
 
   // header: ヒーロー上は白文字、通過後は既存の背景付きヘッダーへ
   var hd=document.getElementById("hd");
-  var heroEl=document.getElementById("hero");
+  var heroEl=document.getElementById("masthead");
   var heroUnderHeader=true;
   function hdCheck(){
     if(heroUnderHeader){
