@@ -841,8 +841,19 @@ footer .logo img{display:block;margin:0 auto;width:clamp(230px,30vw,340px);heigh
   });
 
   // intro（1セッション1回）
-  if(!reduce && !sessionStorage.getItem("introShown")){
-    sessionStorage.setItem("introShown","1");
+  var showIntro=false;
+  if(!reduce){
+    try{
+      var introStorage=window.sessionStorage;
+      if(!introStorage.getItem("introShown")){
+        introStorage.setItem("introShown","1");
+        showIntro=true;
+      }
+    }catch(e){
+      // 一時保存できない場合は演出だけを省き、ページの初期化を続ける。
+    }
+  }
+  if(showIntro){
     var intro=document.createElement("div");
     intro.id="intro";
     intro.innerHTML='<p class="en">SPECIALTY COFFEE IN A CAN</p><p class="big"><img src="assets/branding/7story-co-badge-white.png" alt="7story.co" width="800" height="754"></p>';
